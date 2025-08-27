@@ -1,0 +1,62 @@
+{
+  "categories": [
+    { "name": "Spicy", "color": "bg-red-500", "image": "/images/spicy.png" },
+    {
+      "name": "Healthy",
+      "color": "bg-green-500",
+      "image": "/images/healthy.png"
+    },
+    {
+      "name": "Dessert",
+      "color": "bg-yellow-500",
+      "image": "/images/dessert.png"
+    },
+    { "name": "Drinks", "color": "bg-blue-500", "image": "/images/drinks.png" },
+    {
+      "name": "Fast Food",
+      "color": "bg-orange-500",
+      "image": "/images/fastfood.png"
+    }
+  ],
+  "mockResults": [
+    {
+      "name": "Spicy Chicken Wings",
+      "type": "Spicy",
+      "image": "/images/wings.jpg"
+    },
+    { "name": "Caesar Salad", "type": "Healthy", "image": "/images/salad.jpg" },
+    {
+      "name": "Chocolate Cake",
+      "type": "Dessert",
+      "image": "/images/cake.jpg"
+    },
+    { "name": "Fresh Juice", "type": "Drinks", "image": "/images/juice.jpg" },
+    { "name": "Burger", "type": "Fast Food", "image": "/images/burger.jpg" }
+  ],
+  "heroBanners": {
+    "default": {
+      "title": "Find Your Favorite Food",
+      "color": "bg-purple-600"
+    },
+    "Spicy": {
+      "title": "Turn Up the Heat 🔥",
+      "image": "/images/hero-spicy.jpg"
+    },
+    "Healthy": {
+      "title": "Stay Fresh & Fit 🥗",
+      "image": "/images/hero-healthy.jpg"
+    },
+    "Dessert": {
+      "title": "Sweet Treats Await 🍰",
+      "color": "bg-yellow-600"
+    },
+    "Drinks": {
+      "title": "Refresh Yourself 🍹",
+      "image": "/images/hero-drinks.jpg"
+    },
+    "Fast Food": {
+      "title": "Grab & Go 🍔",
+      "color": "bg-orange-600"
+    }
+  }
+}

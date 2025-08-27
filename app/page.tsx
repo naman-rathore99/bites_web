@@ -1,9 +1,12 @@
 import React from 'react'
+import HeroBanner from './components/ui/HeroBanner';
 
 const page = () => {
   return (
-    <div>page</div>
-  )
+    <div className="popins ">
+     <HeroBanner/>
+    </div>
+  );
 }
 
 export default page
