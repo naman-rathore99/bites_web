@@ -1,0 +1,85 @@
+{
+  "categories": [
+    {
+      "name": "Spicy",
+      "color": "bg-red-500",
+      "image": "https://picsum.photos/seed/spicy/200/200"
+    },
+    {
+      "name": "Healthy",
+      "color": "bg-green-500",
+      "image": "https://picsum.photos/seed/healthy/200/200"
+    },
+    {
+      "name": "Dessert",
+      "color": "bg-yellow-500",
+      "image": "https://picsum.photos/seed/dessert/200/200"
+    },
+    {
+      "name": "Drinks",
+      "color": "bg-blue-500",
+      "image": "https://picsum.photos/seed/drinks/200/200"
+    },
+    {
+      "name": "Fast Food",
+      "color": "bg-orange-500",
+      "image": "https://picsum.photos/seed/fastfood/200/200"
+    }
+  ],
+  "mockResults": [
+    {
+      "name": "Spicy Chicken Wings",
+      "type": "Spicy",
+      "image": "https://picsum.photos/seed/wings/400/300"
+    },
+    {
+      "name": "Caesar Salad",
+      "type": "Healthy",
+      "image": "https://picsum.photos/seed/salad/400/300"
+    },
+    {
+      "name": "Chocolate Cake",
+      "type": "Dessert",
+      "image": "https://picsum.photos/seed/cake/400/300"
+    },
+    {
+      "name": "Fresh Juice",
+      "type": "Drinks",
+      "image": "https://picsum.photos/seed/juice/400/300"
+    },
+    {
+      "name": "Burger",
+      "type": "Fast Food",
+      "image": "https://picsum.photos/seed/burger/400/300"
+    }
+  ],
+  "heroBanners": {
+    "default": {
+      "title": "Find Your Favorite Food",
+      "color": "bg-purple-600",
+      "image": "https://picsum.photos/seed/default-hero/800/300"
+    },
+    "Spicy": {
+      "title": "Turn Up the Heat 🔥",
+      "image": "https://picsum.photos/seed/hero-spicy/800/300"
+    },
+    "Healthy": {
+      "title": "Stay Fresh & Fit 🥗",
+      "image": "https://picsum.photos/seed/hero-healthy/800/300"
+    },
+    "Dessert": {
+      "title": "Sweet Treats Await 🍰",
+      "color": "bg-yellow-600",
+      "image": "https://picsum.photos/seed/hero-dessert/800/300"
+    },
+    "Drinks": {
+      "title": "Refresh Yourself 🍹",
+      "image": "https://picsum.photos/seed/hero-drinks/800/300"
+    },
+    "Fast Food": {
+      "title": "Grab & Go 🍔",
+      "color": "bg-orange-600",
+      "image": "https://picsum.photos/seed/hero-fastfood/800/300"
+    }
+  }
+}
