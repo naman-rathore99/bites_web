@@ -1,22 +1,19 @@
-"use client"
+"use client";
 import React, { useState } from "react";
+import { Category, FilterState } from "@/types";
 
-type FilterState = {
-  searchTerm: string;
-  selectedCategories: string[];
-  priceRange: number;
-};
-
-type SideFilterProps = {
+interface SideFilterProps {
+  categories: Category[];
   onFilterChange: (filters: FilterState) => void;
-};
+}
 
-const SideFilter: React.FC<SideFilterProps> = ({ onFilterChange }) => {
+const SideFilter: React.FC<SideFilterProps> = ({
+  categories,
+  onFilterChange,
+}) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState<number>(50);
-
-  const categories = ["Fruits", "Vegetables", "Organic", "Local"];
+  const [priceRange, setPriceRange] = useState<number>(500);
 
   const handleCategoryChange = (category: string) => {
     let updated: string[];
@@ -42,7 +39,7 @@ const SideFilter: React.FC<SideFilterProps> = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="p-4 border rounded-md bg-white shadow-sm">
+    <div className="p-4 rounded-md bg-gray-100 shadow-sm">
       <h3 className="text-xl font-semibold mb-4">Filter</h3>
 
       {/* Search Box */}
@@ -60,25 +57,25 @@ const SideFilter: React.FC<SideFilterProps> = ({ onFilterChange }) => {
       <div className="mb-4">
         <h4 className="font-medium mb-2">Categories</h4>
         {categories.map((cat) => (
-          <label key={cat} className="block text-sm">
+          <label key={cat.name} className="block text-sm">
             <input
               type="checkbox"
-              checked={selectedCategories.includes(cat)}
-              onChange={() => handleCategoryChange(cat)}
+              checked={selectedCategories.includes(cat.name)}
+              onChange={() => handleCategoryChange(cat.name)}
               className="mr-2"
             />
-            {cat}
+            {cat.name}
           </label>
         ))}
       </div>
 
       {/* Price Range */}
       <div className="mb-4">
-        <h4 className="font-medium mb-2">Price Range: Up to ${priceRange}</h4>
+        <h4 className="font-medium mb-2">Price Range: ₹{priceRange}</h4>
         <input
           type="range"
           min="0"
-          max="100"
+          max="2000"
           value={priceRange}
           onChange={handlePriceChange}
           className="w-full"

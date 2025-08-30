@@ -1,30 +1,53 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import ProductGrid from "./ProductGrid";
 import SideFilter from "../filter/Itemfilter";
+import config from "@/app/data/New_data.json";
+import { FilterState } from "@/types/types";
 
-type FilterState = {
-  searchTerm: string;
-  selectedCategories: string[];
-  priceRange: number;
-};
 
 const ItemGrid: React.FC = () => {
-  const handleFilterChange = (filters: FilterState) => {
-    console.log("Filters updated:", filters);
-    // You can pass this to ProductGrid or manage filtering state here
+  const [filters, setFilters] = useState<FilterState>({
+    searchTerm: "",
+    selectedCategories: [],
+    priceRange: 2000,
+  });
+
+  const handleFilterChange = (newFilters: FilterState) => {
+    setFilters(newFilters);
   };
 
+  // Filtering logic applied to mockResults
+  const filteredProducts: Product[] = config.mockResults.filter((item) => {
+    const matchesSearch = item.name
+      .toLowerCase()
+      .includes(filters.searchTerm.toLowerCase());
+
+    const matchesCategory =
+      filters.selectedCategories.length === 0 ||
+      filters.selectedCategories.includes(item.type);
+
+    // For now no price field in JSON → always true
+    const matchesPrice = true;
+
+    return matchesSearch && matchesCategory && matchesPrice;
+  });
+
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {/* Side Filter - 1/3 */}
-      <div className="col-span-1">
-        <SideFilter onFilterChange={handleFilterChange} />
+    <div className="flex justify-center px-6 py-8 gap-10">
+      {/* Sidebar */}
+      <div className="w-72 flex-shrink-0 sticky top-24 h-fit">
+        <SideFilter
+          categories={config.categories}
+          onFilterChange={handleFilterChange}
+        />
       </div>
 
-      {/* Product Grid - 2/3 */}
-      <div className="col-span-2">
-        <ProductGrid />
+      {/* Products */}
+      <div className="flex-1 flex justify-center">
+        <div className="max-w-6xl w-full">
+          <ProductGrid products={filteredProducts} />
+        </div>
       </div>
     </div>
   );
