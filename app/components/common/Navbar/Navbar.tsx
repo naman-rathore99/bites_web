@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -7,52 +9,54 @@ export default function Navbar() {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-50">
+    <nav className="bg-black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between border-b border-gray-200">
           {/* Left Section: Logo + Links */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img
+              <Image
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=violet&shade=500"
-                alt="Your Company"
+                src="/logo.png"
+                alt="Bites of bliss"
+                width={200}
+                height={50}
               />
             </div>
 
             {/* Desktop Links */}
             <div className="hidden lg:ml-10 lg:block">
               <div className="flex space-x-4">
-                <a
+                <Link
                   href="#"
-                  className="bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-gray-900"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-green-50  border-b-2 hover:border-t-2 hover:border-white"
                 >
                   Home
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
-                  className="hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium text-gray-900"
+                  className=" px-3 py-2 text-green-50  border-b-2 hover:border-t-2 hover:border-white "
                 >
                   Products
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
-                  className="hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium text-gray-900"
+                  className="px-3 py-2  text-green-50  border-b-2 hover:border-t-2 hover:border-white"
                 >
                   Last Order
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
-                  className="hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium text-gray-900"
+                  className=" px-3 py-2 text-sm font-medium text-green-50 border-b-2 hover:border-t-2 hover:border-white"
                 >
                   Top Rated
-                </a>
+                </Link>
               </div>
             </div>
           </div>
 
           {/* Search Section */}
-          <div className="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
+          {/* <div className="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
             <div className="w-full max-w-lg lg:max-w-xs">
               <label htmlFor="search" className="sr-only">
                 Search
@@ -74,14 +78,14 @@ export default function Navbar() {
                 </div>
                 <input
                   id="search"
-                  className="block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 leading-5 text-gray-900 placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 sm:text-sm"
+                  className="block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 leading-5 text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 sm:text-sm"
                   placeholder="Search"
                   type="search"
                   name="search"
                 />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <div className="flex lg:hidden">
@@ -132,7 +136,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <button
                 type="button"
-                className="flex-shrink-0 rounded-full bg-gray-50 p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                className="flex-shrink-0 rounded-full bg-gray-50 p-1 text-gray-400 hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-50"
               >
                 <span className="sr-only">View notifications</span>
                 <svg
@@ -155,7 +159,7 @@ export default function Navbar() {
               <div className="relative ml-3">
                 <button
                   onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                  className="flex rounded-full bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                  className="flex rounded-full bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-50"
                 >
                   <span className="sr-only">Open user menu</span>
                   <img
@@ -166,25 +170,25 @@ export default function Navbar() {
                 </button>
 
                 {userDropdownOpen && (
-                  <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5">
-                    <a
+                  <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-black py-1 shadow-lg ring-1 ring-black ring-opacity-5">
+                    <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-green-50 hover:text-black hover:bg-gray-100"
                     >
                       Your Profile
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm  text-green-50 hover:text-black hover:bg-gray-100"
                     >
                       Settings
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-green-50 hover:text-black hover:bg-gray-100"
                     >
                       Sign out
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -202,25 +206,25 @@ export default function Navbar() {
           <div className="space-y-1 px-2 pt-2 pb-3">
             <a
               href="#"
-              className="bg-gray-100 block px-3 py-2 rounded-md font-medium text-gray-900"
+              className="bg-gray-100 block px-3 py-2 rounded-md font-medium text-white"
             >
               Home
             </a>
             <a
               href="#"
-              className="hover:bg-gray-100 block px-3 py-2 rounded-md font-medium text-gray-900"
+              className="hover:bg-gray-100 block px-3 py-2 rounded-md font-medium text-white"
             >
               Products
             </a>
             <a
               href="#"
-              className="hover:bg-gray-100 block px-3 py-2 rounded-md font-medium text-gray-900"
+              className="hover:bg-gray-100 block px-3 py-2 rounded-md font-medium text-white"
             >
               Last Order
             </a>
             <a
               href="#"
-              className="hover:bg-gray-100 block px-3 py-2 rounded-md font-medium text-gray-900"
+              className="hover:bg-gray-100 block px-3 py-2 rounded-md font-medium text-white"
             >
               Top Rated
             </a>
@@ -244,13 +248,13 @@ export default function Navbar() {
             <div className="mt-3 space-y-1 px-2">
               <a
                 href="#"
-                className="block rounded-md py-2 px-3 text-base font-medium text-gray-900 hover:bg-gray-100"
+                className="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-gray-100"
               >
                 Your Profile
               </a>
               <a
                 href="#"
-                className="block rounded-md py-2 px-3 text-base font-medium text-gray-900 hover:bg-gray-100"
+                className="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-gray-100"
               >
                 Settings
               </a>

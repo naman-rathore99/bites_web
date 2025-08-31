@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ProductGrid from "./ProductGrid";
 import SideFilter from "../filter/Itemfilter";
 import config from "@/app/data/New_data.json";
-import { FilterState } from "@/types/types";
+import { FilterState, Product } from "@/types/types";
 
 
 const ItemGrid: React.FC = () => {
@@ -36,7 +36,7 @@ const ItemGrid: React.FC = () => {
   return (
     <div className="flex justify-center px-6 py-8 gap-10">
       {/* Sidebar */}
-      <div className="w-72 flex-shrink-0 sticky top-24 h-fit">
+      <div className="w-72 flex-shrink-0 sticky top-6 h-fit">
         <SideFilter
           categories={config.categories}
           onFilterChange={handleFilterChange}

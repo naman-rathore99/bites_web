@@ -25,387 +25,464 @@
     {
       "name": "Poori (5)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/poori5/400/300"
+      "image": "https://picsum.photos/seed/poori5/400/300",
+      "price": 119
     },
     {
       "name": "Tawa Butter Roti",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/tawabutterroti/400/300"
+      "image": "https://picsum.photos/seed/tawabutterroti/400/300",
+      "price": 25
     },
     {
       "name": "Sada Paratha (5)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/sadaparatha5/400/300"
+      "image": "https://picsum.photos/seed/sadaparatha5/400/300",
+      "price": 149
     },
     {
       "name": "Aloo Paratha (2)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/alooparatha2/400/300"
+      "image": "https://picsum.photos/seed/alooparatha2/400/300",
+      "price": 189
     },
     {
       "name": "Tawa Roti (6)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/tawaroti6/400/300"
+      "image": "https://picsum.photos/seed/tawaroti6/400/300",
+      "price": 115
     },
     {
       "name": "Butter Khichdi",
       "type": "Others",
-      "image": "https://picsum.photos/seed/butterkhichdi/400/300"
+      "image": "https://picsum.photos/seed/butterkhichdi/400/300",
+      "price": 189
     },
     {
       "name": "Moong Dal Khichdi (Bestseller)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/moongdalkhichdibestseller/400/300"
+      "image": "https://picsum.photos/seed/moongdalkhichdibestseller/400/300",
+      "price": 199
     },
     {
       "name": "Vegetable & Dal Khichdi",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/vegetable&dalkhichdi/400/300"
+      "image": "https://picsum.photos/seed/vegetable&dalkhichdi/400/300",
+      "price": 199
     },
     {
       "name": "Moong Dal Daliya",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/moongdaldaliya/400/300"
+      "image": "https://picsum.photos/seed/moongdaldaliya/400/300",
+      "price": 199
     },
     {
       "name": "Vegetable Daliya",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/vegetabledaliya/400/300"
+      "image": "https://picsum.photos/seed/vegetabledaliya/400/300",
+      "price": 199
     },
     {
       "name": "Mixed Veg Uttapam (2 Pieces)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/mixedveguttapam2pieces/400/300"
+      "image": "https://picsum.photos/seed/mixedveguttapam2pieces/400/300",
+      "price": 145
     },
     {
       "name": "Veg Appe (8 Pieces)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/vegappe8pieces/400/300"
+      "image": "https://picsum.photos/seed/vegappe8pieces/400/300",
+      "price": 149
     },
     {
       "name": "Plain Besan Chilla (2)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/plainbesanchilla2/400/300"
+      "image": "https://picsum.photos/seed/plainbesanchilla2/400/300",
+      "price": 149
     },
     {
       "name": "Mixed Veg Besan Chilla (2)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/mixedvegbesanchilla2/400/300"
+      "image": "https://picsum.photos/seed/mixedvegbesanchilla2/400/300",
+      "price": 149
     },
     {
       "name": "Paneer Stuffed Besan Chilla (2)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/paneerstuffedbesanchilla2/400/300"
+      "image": "https://picsum.photos/seed/paneerstuffedbesanchilla2/400/300",
+      "price": 279
     },
     {
       "name": "Onion Uttapam (2)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/onionuttapam2/400/300"
+      "image": "https://picsum.photos/seed/onionuttapam2/400/300",
+      "price": 99
     },
     {
       "name": "Idli (10 Pieces)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/idli10pieces/400/300"
+      "image": "https://picsum.photos/seed/idli10pieces/400/300",
+      "price": 289
     },
     {
       "name": "White Rava Dhokla",
       "type": "Others",
-      "image": "https://picsum.photos/seed/whiteravadhokla/400/300"
+      "image": "https://picsum.photos/seed/whiteravadhokla/400/300",
+      "price": 299
     },
     {
       "name": "Moong Dal Appam",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/moongdalappam/400/300"
+      "image": "https://picsum.photos/seed/moongdalappam/400/300",
+      "price": 245
     },
     {
       "name": "Veg Noodles + French Fries",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/vegnoodles+frenchfries/400/300"
+      "image": "https://picsum.photos/seed/vegnoodles+frenchfries/400/300",
+      "price": 199
     },
     {
       "name": "Schezwan Noodles + Peri Peri French Fries",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/schezwannoodles+periperifrenchfries/400/300"
+      "image": "https://picsum.photos/seed/schezwannoodles+periperifrenchfries/400/300",
+      "price": 229
     },
     {
       "name": "Paneer Noodles + Hakka Noodle",
       "type": "Others",
-      "image": "https://picsum.photos/seed/paneernoodles+hakkanoodle/400/300"
+      "image": "https://picsum.photos/seed/paneernoodles+hakkanoodle/400/300",
+      "price": 229
     },
     {
       "name": "Veg Hakka Noodles + Veg Maggi",
       "type": "Others",
-      "image": "https://picsum.photos/seed/veghakkanoodles+vegmaggi/400/300"
+      "image": "https://picsum.photos/seed/veghakkanoodles+vegmaggi/400/300",
+      "price": 179
     },
     {
       "name": "Fried Rice",
       "type": "Others",
-      "image": "https://picsum.photos/seed/friedrice/400/300"
+      "image": "https://picsum.photos/seed/friedrice/400/300",
+      "price": 145
     },
     {
       "name": "Soya Fried Rice",
       "type": "Others",
-      "image": "https://picsum.photos/seed/soyafriedrice/400/300"
+      "image": "https://picsum.photos/seed/soyafriedrice/400/300",
+      "price": 199
     },
     {
       "name": "Paneer Fried Rice",
       "type": "Others",
-      "image": "https://picsum.photos/seed/paneerfriedrice/400/300"
+      "image": "https://picsum.photos/seed/paneerfriedrice/400/300",
+      "price": 245
     },
     {
       "name": "Cheese Loaded Paneer Pizza (7 inches)",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/cheeseloadedpaneerpizza7inches/400/300"
+      "image": "https://picsum.photos/seed/cheeseloadedpaneerpizza7inches/400/300",
+      "price": 189
     },
     {
       "name": "Cheese Loaded Mushroom Pizza (7 inches)",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/cheeseloadedmushroompizza7inches/400/300"
+      "image": "https://picsum.photos/seed/cheeseloadedmushroompizza7inches/400/300",
+      "price": 199
     },
     {
       "name": "Capsicum Pizza (8 inches)",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/capsicumpizza8inches/400/300"
+      "image": "https://picsum.photos/seed/capsicumpizza8inches/400/300",
+      "price": 169
     },
     {
       "name": "Onion Pizza (8 inches)",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/onionpizza8inches/400/300"
+      "image": "https://picsum.photos/seed/onionpizza8inches/400/300",
+      "price": 169
     },
     {
       "name": "Corn Pizza (7 inches)",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/cornpizza7inches/400/300"
+      "image": "https://picsum.photos/seed/cornpizza7inches/400/300",
+      "price": 189
     },
     {
       "name": "Paneer Pizza (6 inches)",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/paneerpizza6inches/400/300"
+      "image": "https://picsum.photos/seed/paneerpizza6inches/400/300",
+      "price": 189
     },
     {
       "name": "Veg Tandoori Pizza (8 inches)",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/vegtandooripizza8inches/400/300"
+      "image": "https://picsum.photos/seed/vegtandooripizza8inches/400/300",
+      "price": 169
     },
     {
       "name": "Masala Sandwich",
       "type": "Spicy",
-      "image": "https://picsum.photos/seed/masalasandwich/400/300"
+      "image": "https://picsum.photos/seed/masalasandwich/400/300",
+      "price": 119
     },
     {
       "name": "Mixed Veg Brown Bread Sandwich",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/mixedvegbrownbreadsandwich/400/300"
+      "image": "https://picsum.photos/seed/mixedvegbrownbreadsandwich/400/300",
+      "price": 129
     },
     {
       "name": "Paneer Sandwich",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/paneersandwich/400/300"
+      "image": "https://picsum.photos/seed/paneersandwich/400/300",
+      "price": 120
     },
     {
       "name": "Masala Cheese Sandwich",
       "type": "Spicy",
-      "image": "https://picsum.photos/seed/masalacheesesandwich/400/300"
+      "image": "https://picsum.photos/seed/masalacheesesandwich/400/300",
+      "price": 149
     },
     {
       "name": "Double Cheese Masala Sandwich",
       "type": "Spicy",
-      "image": "https://picsum.photos/seed/doublecheesemasalasandwich/400/300"
+      "image": "https://picsum.photos/seed/doublecheesemasalasandwich/400/300",
+      "price": 245
     },
     {
       "name": "Paneer Angara Sandwich",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/paneerangarasandwich/400/300"
+      "image": "https://picsum.photos/seed/paneerangarasandwich/400/300",
+      "price": 189
     },
     {
       "name": "Triple Bread Masala Sandwich",
       "type": "Spicy",
-      "image": "https://picsum.photos/seed/triplebreadmasalasandwich/400/300"
+      "image": "https://picsum.photos/seed/triplebreadmasalasandwich/400/300",
+      "price": 149
     },
     {
       "name": "Sprouts Bhel",
       "type": "Others",
-      "image": "https://picsum.photos/seed/sproutsbhel/400/300"
+      "image": "https://picsum.photos/seed/sproutsbhel/400/300",
+      "price": 149
     },
     {
       "name": "Moong Dal Chilla [1 Piece]",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/moongdalchilla[1piece]/400/300"
+      "image": "https://picsum.photos/seed/moongdalchilla[1piece]/400/300",
+      "price": 219
     },
     {
       "name": "Vegetable Upma (Bestseller)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/vegetableupmabestseller/400/300"
+      "image": "https://picsum.photos/seed/vegetableupmabestseller/400/300",
+      "price": 145
     },
     {
       "name": "Aloo Poori [Jumbo] (5)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/aloopoori[jumbo]5/400/300"
+      "image": "https://picsum.photos/seed/aloopoori[jumbo]5/400/300",
+      "price": 225
     },
     {
       "name": "Cheese Aloo Poori [Jumbo] (2)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/cheesealoopoori[jumbo]2/400/300"
+      "image": "https://picsum.photos/seed/cheesealoopoori[jumbo]2/400/300",
+      "price": 189
     },
     {
       "name": "Vegetable Poha",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/vegetablepoha/400/300"
+      "image": "https://picsum.photos/seed/vegetablepoha/400/300",
+      "price": 99
     },
     {
       "name": "Indori Poha",
       "type": "Others",
-      "image": "https://picsum.photos/seed/indoripoha/400/300"
+      "image": "https://picsum.photos/seed/indoripoha/400/300",
+      "price": 129
     },
     {
       "name": "Vermicelli Upma",
       "type": "Others",
-      "image": "https://picsum.photos/seed/vermicelliupma/400/300"
+      "image": "https://picsum.photos/seed/vermicelliupma/400/300",
+      "price": 149
     },
     {
       "name": "French Fries",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/frenchfries/400/300"
+      "image": "https://picsum.photos/seed/frenchfries/400/300",
+      "price": 145
     },
     {
       "name": "Peri Peri French Fries",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/periperifrenchfries/400/300"
+      "image": "https://picsum.photos/seed/periperifrenchfries/400/300",
+      "price": 189
     },
     {
       "name": "Cheese Maggi",
       "type": "Others",
-      "image": "https://picsum.photos/seed/cheesemaggi/400/300"
+      "image": "https://picsum.photos/seed/cheesemaggi/400/300",
+      "price": 149
     },
     {
       "name": "Mixed Vegetable Maggi",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/mixedvegetablemaggi/400/300"
+      "image": "https://picsum.photos/seed/mixedvegetablemaggi/400/300",
+      "price": 99
     },
     {
       "name": "Corn Maggi",
       "type": "Others",
-      "image": "https://picsum.photos/seed/cornmaggi/400/300"
+      "image": "https://picsum.photos/seed/cornmaggi/400/300",
+      "price": 99
     },
     {
       "name": "Tandoori Maggi",
       "type": "Others",
-      "image": "https://picsum.photos/seed/tandoorimaggi/400/300"
+      "image": "https://picsum.photos/seed/tandoorimaggi/400/300",
+      "price": 99
     },
     {
       "name": "Yippee Noodles",
       "type": "Others",
-      "image": "https://picsum.photos/seed/yippeenoodles/400/300"
+      "image": "https://picsum.photos/seed/yippeenoodles/400/300",
+      "price": 125
     },
     {
       "name": "Mixed Veg Yippee Noodles",
       "type": "Others",
-      "image": "https://picsum.photos/seed/mixedvegyippeenoodles/400/300"
+      "image": "https://picsum.photos/seed/mixedvegyippeenoodles/400/300",
+      "price": 129
     },
     {
       "name": "Tomato Yippee Noodles",
       "type": "Others",
-      "image": "https://picsum.photos/seed/tomatoyippeenoodles/400/300"
+      "image": "https://picsum.photos/seed/tomatoyippeenoodles/400/300",
+      "price": 125
     },
     {
       "name": "Soupy Yippee Noodles",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/soupyyippeenoodles/400/300"
+      "image": "https://picsum.photos/seed/soupyyippeenoodles/400/300",
+      "price": 149
     },
     {
       "name": "Paneer Tikka [8 Pieces]",
       "type": "Spicy",
-      "image": "https://picsum.photos/seed/paneertikka[8pieces]/400/300"
+      "image": "https://picsum.photos/seed/paneertikka[8pieces]/400/300",
+      "price": 299
     },
     {
       "name": "Moong Dal Bhajiya",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/moongdalbhajiya/400/300"
+      "image": "https://picsum.photos/seed/moongdalbhajiya/400/300",
+      "price": 149
     },
     {
       "name": "Onion Pakoda [100g] & Aloo Slice Pakoda [50g]",
       "type": "Others",
-      "image": "https://picsum.photos/seed/onionpakoda[100g]&alooslicepakoda[50g]/400/300"
+      "image": "https://picsum.photos/seed/onionpakoda[100g]&alooslicepakoda[50g]/400/300",
+      "price": 149
     },
     {
       "name": "Butter Popcorn",
       "type": "Others",
-      "image": "https://picsum.photos/seed/butterpopcorn/400/300"
+      "image": "https://picsum.photos/seed/butterpopcorn/400/300",
+      "price": 129
     },
     {
       "name": "Salted Popcorn",
       "type": "Others",
-      "image": "https://picsum.photos/seed/saltedpopcorn/400/300"
+      "image": "https://picsum.photos/seed/saltedpopcorn/400/300",
+      "price": 99
     },
     {
       "name": "Peri Peri Fries with Salted Fries",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/periperifrieswithsaltedfries/400/300"
+      "image": "https://picsum.photos/seed/periperifrieswithsaltedfries/400/300",
+      "price": 198
     },
     {
       "name": "Peri Peri Cheese French Fries with Salted",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/peripericheesefrenchfrieswithsalted/400/300"
+      "image": "https://picsum.photos/seed/peripericheesefrenchfrieswithsalted/400/300",
+      "price": 199
     },
     {
       "name": "Sabudana Khichdi + Aloo Fariyali Mixcher",
       "type": "Others",
-      "image": "https://picsum.photos/seed/sabudanakhichdi+aloofariyalimixcher/400/300"
+      "image": "https://picsum.photos/seed/sabudanakhichdi+aloofariyalimixcher/400/300",
+      "price": 199
     },
     {
       "name": "Saubudan Soup + 1 Sabudana Papad",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/saubudansoup+1sabudanapapad/400/300"
+      "image": "https://picsum.photos/seed/saubudansoup+1sabudanapapad/400/300",
+      "price": 199
     },
     {
       "name": "Sabudana Tikki [10 Pieces]",
       "type": "Others",
-      "image": "https://picsum.photos/seed/sabudanatikki[10pieces]/400/300"
+      "image": "https://picsum.photos/seed/sabudanatikki[10pieces]/400/300",
+      "price": 248
     },
     {
       "name": "Sabudan French Fries [10 Pieces]",
       "type": "Fast Food",
-      "image": "https://picsum.photos/seed/sabudanfrenchfries[10pieces]/400/300"
+      "image": "https://picsum.photos/seed/sabudanfrenchfries[10pieces]/400/300",
+      "price": 199
     },
     {
       "name": "Singhara Poori (5)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/singharapoori5/400/300"
+      "image": "https://picsum.photos/seed/singharapoori5/400/300",
+      "price": 249
     },
     {
       "name": "Farali Aloo",
       "type": "Others",
-      "image": "https://picsum.photos/seed/faralialoo/400/300"
+      "image": "https://picsum.photos/seed/faralialoo/400/300",
+      "price": 179
     },
     {
       "name": "Samak Rice + Aloo Ki Gravy Sabji",
       "type": "Others",
-      "image": "https://picsum.photos/seed/samakrice+alookigravysabji/400/300"
+      "image": "https://picsum.photos/seed/samakrice+alookigravysabji/400/300",
+      "price": 249
     },
     {
       "name": "Aloo Tikki [5 Pieces] + Aloo Mixchr",
       "type": "Others",
-      "image": "https://picsum.photos/seed/alootikki[5pieces]+aloomixchr/400/300"
+      "image": "https://picsum.photos/seed/alootikki[5pieces]+aloomixchr/400/300",
+      "price": 225
     },
     {
       "name": "Sabudana Papad  + 2 Sabudana Tikki",
       "type": "Others",
-      "image": "https://picsum.photos/seed/sabudanapapad+2sabudanatikki/400/300"
+      "image": "https://picsum.photos/seed/sabudanapapad+2sabudanatikki/400/300",
+      "price": 149
     },
     {
       "name": "Sabudana Vada  + 2 Sabudana Papad",
       "type": "Others",
-      "image": "https://picsum.photos/seed/sabudanavada+2sabudanapapad/400/300"
+      "image": "https://picsum.photos/seed/sabudanavada+2sabudanapapad/400/300",
+      "price": 199
     },
     {
       "name": "Singhara ke Pakode [100g] + 2 Sabudana Papad",
       "type": "Others",
-      "image": "https://picsum.photos/seed/singharakepakode[100g]+2sabudanapapad/400/300"
+      "image": "https://picsum.photos/seed/singharakepakode[100g]+2sabudanapapad/400/300",
+      "price": 179
     },
     {
       "name": "Sabudana Pakoda [100g] + Singhara Pakoda [100g]",
       "type": "Others",
-      "image": "https://picsum.photos/seed/sabudanapakoda[100g]+singharapakoda[100g]/400/300"
+      "image": "https://picsum.photos/seed/sabudanapakoda[100g]+singharapakoda[100g]/400/300",
+      "price": 299
     }
   ],
   "heroBanners": {
