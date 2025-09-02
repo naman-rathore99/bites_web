@@ -4,7 +4,14 @@ import ProductGrid from "./ProductGrid";
 import SideFilter from "../filter/Itemfilter";
 import config from "@/app/data/New_data.json";
 import { FilterState, Product } from "@/types/types";
-
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"; // shadcn/ui
 
 const ItemGrid: React.FC = () => {
   const [filters, setFilters] = useState<FilterState>({
@@ -34,9 +41,31 @@ const ItemGrid: React.FC = () => {
   });
 
   return (
-    <div className="flex justify-center px-6 py-8 gap-10">
-      {/* Sidebar */}
-      <div className="w-72 flex-shrink-0 sticky top-6 h-fit">
+    <div className="flex flex-col md:flex-row justify-center px-6 py-8 gap-6">
+      {/* Mobile Filter Drawer */}
+      <div className="md:hidden mb-4">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline" className="w-full">
+              Show Filters
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-80 sm:w-96 overflow-y-auto">
+            <SheetHeader>
+              <SheetTitle>Filters</SheetTitle>
+            </SheetHeader>
+            <div className="mt-4">
+              <SideFilter
+                categories={config.categories}
+                onFilterChange={handleFilterChange}
+              />
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
+
+      {/* Sidebar (desktop only) */}
+      <div className="hidden md:block w-72 flex-shrink-0 sticky top-6 h-fit">
         <SideFilter
           categories={config.categories}
           onFilterChange={handleFilterChange}
