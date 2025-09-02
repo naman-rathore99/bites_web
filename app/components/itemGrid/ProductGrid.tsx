@@ -3,6 +3,7 @@
 import { Product } from "@/types/types";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductGridProps {
   products: Product[];
@@ -46,26 +47,27 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
                   className="relative flex flex-col overflow-hidden rounded-md border border-gray-100 bg-white shadow-md"
                 >
                   {/* Image */}
-                  <a
+                  <Link
                     href="#"
                     className="relative mx-2 mt-2 flex h-50 overflow-hidden rounded-md"
                   >
                     <Image
                       src={item.image}
+                      // src={imagePath.trim()}
                       alt={item.name}
                       width={500}
                       height={400}
                       className="object-cover w-full h-full"
                     />
-                  </a>
+                  </Link>
 
                   {/* Details */}
                   <div className="mt-4 px-5 pb-5">
-                    <a href="#">
+                    <Link href="#">
                       <h5 className="text-xl tracking-tight text-slate-900 truncate">
                         {item.name}
                       </h5>
-                    </a>
+                    </Link>
 
                     <div className="mt-2 mb-5 flex items-center justify-between">
                       <p>
@@ -76,7 +78,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
                     </div>
 
                     {/* Add to cart */}
-                    <a
+                    <Link
                       href="#"
                       className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
                     >
@@ -101,7 +103,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
                         />
                       </svg>
                       Add to cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}
