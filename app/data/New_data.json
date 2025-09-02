@@ -1,3 +1,4 @@
+
 {
   "categories": [
     {
@@ -25,73 +26,73 @@
     {
       "name": "Poori (5)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/poori5/400/300",
+      "image": "/aloo-bhaji.jpg",
       "price": 119
     },
     {
       "name": "Tawa Butter Roti",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/tawabutterroti/400/300",
+      "image": "/tawaRoti.jpg",
       "price": 25
     },
     {
       "name": "Sada Paratha (5)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/sadaparatha5/400/300",
+      "image": "/plainParatha.jpg",
       "price": 149
     },
     {
       "name": "Aloo Paratha (2)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/alooparatha2/400/300",
+      "image": "/aloo-bhaji.jpg",
       "price": 189
     },
     {
       "name": "Tawa Roti (6)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/tawaroti6/400/300",
+      "image": "/tawaRoti.jpg",
       "price": 115
     },
     {
       "name": "Butter Khichdi",
       "type": "Others",
-      "image": "https://picsum.photos/seed/butterkhichdi/400/300",
+      "image": "/butterKhichdi.jpeg",
       "price": 189
     },
     {
       "name": "Moong Dal Khichdi (Bestseller)",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/moongdalkhichdibestseller/400/300",
+      "image": "/moonDal.webp",
       "price": 199
     },
     {
       "name": "Vegetable & Dal Khichdi",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/vegetable&dalkhichdi/400/300",
+      "image": "/VegetableDalKhichdi.jpg",
       "price": 199
     },
     {
       "name": "Moong Dal Daliya",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/moongdaldaliya/400/300",
+      "image": "/MoongDalDaliya.jpg",
       "price": 199
     },
     {
       "name": "Vegetable Daliya",
       "type": "Healthy",
-      "image": "https://picsum.photos/seed/vegetabledaliya/400/300",
+      "image": "/VegetableDaliya.avif",
       "price": 199
     },
     {
       "name": "Mixed Veg Uttapam (2 Pieces)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/mixedveguttapam2pieces/400/300",
+      "image": "/MixedVegUttapam.jpg",
       "price": 145
     },
     {
       "name": "Veg Appe (8 Pieces)",
       "type": "Others",
-      "image": "https://picsum.photos/seed/vegappe8pieces/400/300",
+      "image": "/VegAppe.jpg",
       "price": 149
     },
     {

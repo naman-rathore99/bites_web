@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import ProductGrid from "./ProductGrid";
-import SideFilter from "../filter/Itemfilter";
 import config from "@/app/data/New_data.json";
 import { FilterState, Product } from "@/types/types";
 import { Button } from "@/components/ui/button";
@@ -12,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"; // shadcn/ui
+import SideFilter from "../filter/Itemsfilter";
 
 const ItemGrid: React.FC = () => {
   const [filters, setFilters] = useState<FilterState>({
