@@ -1,8 +1,8 @@
 
 export default function Footer() {
 return (
- <footer classNameName="w-full ">
-<div classNameName="mx-auto max-w-7xl ">
+ <footer classNam="w-full ">
+<div className="mx-auto max-w-7xl ">
 <div className="flex justify-between items-center flex-col gap-8 xl:flex-row">
 <div className="flex items-center justify-between gap-5 flex-wrap w-full">
 <a href="https://pagedone.io/" className="flex justify-center ">
