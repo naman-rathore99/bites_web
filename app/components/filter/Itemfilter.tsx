@@ -1,6 +1,6 @@
 "use client";
+import { Category, FilterState } from "@/types/types";
 import React, { useState } from "react";
-import { Category, FilterState } from "@/types";
 
 interface SideFilterProps {
   categories: Category[];
