@@ -1,106 +1,232 @@
-"use client";
+"use client"
+
+import React, { useState } from "react";
 import { signIn } from "next-auth/react";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Eye, EyeOff, Mail, Lock, ChefHat } from "lucide-react";
 import Link from "next/link";
 
 export default function LoginPage() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
-  const handleLogin = async () => {
-    const res = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
+  };
 
-    if (res?.error) {
-      setError("Invalid email or password");
-    } else {
-      router.push("/");
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const result = await signIn("credentials", {
+        email: formData.email,
+        password: formData.password,
+        redirect: false,
+      });
+
+      if (result?.error) {
+        setError("Invalid credentials. Please try again.");
+      } else {
+        router.push("/");
+      }
+    } catch (error) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="flex h-screen w-screen items-center overflow-hidden px-2">
-      {/* Login Card */}
-      <div className="relative flex w-96 flex-col space-y-5 rounded-lg border bg-white px-5 py-10 shadow-xl sm:mx-auto">
-        <div className="-z-10 absolute top-4 left-1/2 h-full w-5/6 -translate-x-1/2 rounded-lg bg-blue-600 sm:-right-10 sm:top-auto sm:left-auto sm:w-full sm:translate-x-0"></div>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4">
+      {/* Background Pattern */}
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      ></div>
 
-        <div className="mx-auto mb-2 space-y-3">
-          <h1 className="text-center text-3xl font-bold text-gray-700">
-            Sign in
-          </h1>
-          <p className="text-gray-500">Sign in to access your account</p>
+      <div className="relative w-full max-w-md">
+        {/* Login Card */}
+        <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-opacity-95">
+          {/* Logo/Brand */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full mb-4 shadow-lg">
+              <ChefHat className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              Bites of Bliss
+            </h1>
+            <p className="text-gray-600">
+              Welcome back! Ready for something delicious?
+            </p>
+          </div>
+
+          {/* Login Form */}
+          <div className="space-y-6">
+            {/* Email Field */}
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Email Address
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Mail className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 bg-gray-50 focus:bg-white outline-none"
+                  placeholder="chef@bitesofbliss.com"
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Password Field */}
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Password
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Lock className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="block w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 bg-gray-50 focus:bg-white outline-none"
+                  placeholder="••••••••"
+                  required
+                />
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                  ) : (
+                    <Eye className="h-5 w-5 text-gray-400 hover:text-gray-600" />
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Remember Me & Forgot Password */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="h-4 w-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                />
+                <label
+                  htmlFor="remember-me"
+                  className="ml-2 block text-sm text-gray-700"
+                >
+                  Remember me
+                </label>
+              </div>
+              <button
+                type="button"
+                className="text-sm text-orange-600 hover:text-orange-500 font-medium"
+              >
+                Forgot password?
+              </button>
+            </div>
+
+            {/* Error Message */}
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
+
+            {/* Submit Button */}
+            <button
+              type="button"
+              onClick={handleSubmit}
+              disabled={loading}
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-700 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105"
+            >
+              {loading ? (
+                <div className="flex items-center">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  Signing in...
+                </div>
+              ) : (
+                "Sign in to your account"
+              )}
+            </button>
+          </div>
+
+          {/* Divider */}
+          <div className="mt-8 relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-white text-gray-500">
+                New to Bites of Bliss?
+              </span>
+            </div>
+          </div>
+
+          {/* Sign Up Link */}
+          <div className="mt-6 text-center">
+            <Link href="/signup" className="cursor-pointer">
+              <button
+                type="button"
+                className="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
+              >
+                Create your account
+              </button>
+            </Link>
+          </div>
+
+          {/* Footer */}
+          <div className="mt-8 text-center">
+            <p className="text-xs text-gray-500">
+              By signing in, you agree to our{" "}
+              <a href="#" className="text-orange-600 hover:text-orange-500">
+                Terms of Service
+              </a>{" "}
+              and{" "}
+              <a href="#" className="text-orange-600 hover:text-orange-500">
+                Privacy Policy
+              </a>
+            </p>
+          </div>
         </div>
 
-        {error && <p className="text-center text-red-500">{error}</p>}
-
-        {/* Email Input */}
-        <div className="relative mt-2 w-full">
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="border-1 peer block w-full appearance-none rounded-lg  border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-            placeholder=" "
-          />
-          <label
-            htmlFor="email"
-            className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
-          >
-            Enter Your Email
-          </label>
-        </div>
-
-        {/* Password Input */}
-        <div className="relative mt-2 w-full">
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="border-1 peer block w-full appearance-none rounded-lg  border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-            placeholder=" "
-          />
-          <label
-            htmlFor="password"
-            className="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-white px-2 text-sm text-gray-500 duration-300"
-          >
-            Enter Your Password
-          </label>
-        </div>
-
-        {/* Login Button + Forgot Password */}
-        <div className="flex w-full items-center">
-          <button
-            onClick={handleLogin}
-            className="shrink-0 inline-block w-36 rounded-lg bg-blue-600 py-3 font-bold text-white hover:bg-blue-700"
-          >
-            Login
-          </button>
-          <a
-            className="w-full text-center text-sm font-medium text-gray-600 hover:underline"
-            href="#"
-          >
-            Forgot your password?
-          </a>
-        </div>
-
-        {/* Sign Up Link */}
-        <p className="text-center text-gray-600">
-          Don&apos;t have an account?{" "}
-          <Link
-            href="/signup"
-            className="whitespace-nowrap font-semibold text-gray-900 hover:underline"
-          >
-            Sign up
-          </Link>
-        </p>
+        {/* Decorative Elements */}
+        <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-gradient-to-tr from-red-400 to-pink-400 rounded-full opacity-10 blur-3xl"></div>
       </div>
     </div>
   );

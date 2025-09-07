@@ -1,8 +1,9 @@
+// app/layout.tsx - Temporary for debugging
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers/Providers";
 import Navbar from "./components/common/Navbar/Navbar";
-import Footer from "./components/common/Footer/Footer";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "500", "600", "800"],
@@ -13,6 +14,7 @@ const popins = Poppins({
   weight: ["400", "700", "500", "600", "800"],
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "Bites of Bliss",
   description: "Soulfull food by Bites of bliss",
@@ -26,9 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`montserrat popins antialiased`}>
-      <Navbar/>  
-        {children}
-        <Footer/>
+        <Providers>
+ <Navbar/>       
+          {children}</Providers>
       </body>
     </html>
   );

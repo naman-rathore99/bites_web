@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+import { useSession, signOut } from "next-auth/react";
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { data: session, status } = useSession();
   return (
     <nav className="bg-black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -157,39 +157,50 @@ export default function Navbar() {
 
               {/* User dropdown */}
               <div className="relative ml-3">
-                <button
-                  onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                  className="flex rounded-full bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-50"
-                >
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    className="h-8 w-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263"
-                    alt=""
-                  />
-                </button>
+                {session ? (
+                  <>
+                    <button
+                      onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                      className="flex rounded-full bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-50"
+                    >
+                      <span className="sr-only">Open user menu</span>
+                      <img
+                        className="h-8 w-8 rounded-full"
+                        src={
+                          session.user?.image ||
+                          "https://images.unsplash.com/photo-1517365830460-955ce3ccd263"
+                        }
+                        alt=""
+                      />
+                    </button>
 
-                {userDropdownOpen && (
-                  <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-black py-1 shadow-lg ring-1 ring-black ring-opacity-5">
-                    <Link
-                      href="#"
-                      className="block px-4 py-2 text-sm text-green-50 hover:text-black hover:bg-gray-100"
-                    >
-                      Your Profile
-                    </Link>
-                    <Link
-                      href="#"
-                      className="block px-4 py-2 text-sm  text-green-50 hover:text-black hover:bg-gray-100"
-                    >
-                      Settings
-                    </Link>
-                    <Link
-                      href="#"
-                      className="block px-4 py-2 text-sm text-green-50 hover:text-black hover:bg-gray-100"
-                    >
-                      Sign out
-                    </Link>
-                  </div>
+                    {userDropdownOpen && (
+                      <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-black py-1 shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="px-4 py-2 text-sm text-green-50">
+                          {session.user?.name || session.user?.email}
+                        </div>
+                        <Link
+                          href="#"
+                          className="block px-4 py-2 text-sm text-green-50 hover:text-black hover:bg-gray-100"
+                        >
+                          Your Profile
+                        </Link>
+                        <button
+                          onClick={() => signOut()}
+                          className="block w-full text-left px-4 py-2 text-sm text-green-50 hover:text-black hover:bg-gray-100"
+                        >
+                          Sign out
+                        </button>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="text-green-50 hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Sign In
+                  </Link>
                 )}
               </div>
             </div>

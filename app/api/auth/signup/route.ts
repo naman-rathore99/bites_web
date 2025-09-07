@@ -4,7 +4,18 @@ import bcryptjs from "bcryptjs";
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, password } = await request.json();
+    const body = await request.json();
+    const { name, email, phone, password } = body;
+
+    console.log("Signup request received:", { name, email, phone: !!phone });
+
+    // Validate required fields
+    if (!name || !email || !password) {
+      return NextResponse.json(
+        { message: "Name, email, and password are required" },
+        { status: 400 }
+      );
+    }
 
     // Check if user already exists
     const existingUser = await prisma.user.findUnique({
@@ -12,8 +23,9 @@ export async function POST(request: NextRequest) {
     });
 
     if (existingUser) {
+      console.log("User already exists:", email);
       return NextResponse.json(
-        { message: "User already exists" },
+        { message: "User already exists with this email" },
         { status: 400 }
       );
     }
@@ -26,9 +38,12 @@ export async function POST(request: NextRequest) {
       data: {
         name,
         email,
+        // phone: phone || null,
         password: hashedPassword,
       },
     });
+
+    console.log("User created successfully:", user.id);
 
     return NextResponse.json(
       { message: "User created successfully", userId: user.id },
@@ -37,7 +52,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Signup error:", error);
     return NextResponse.json(
-      { message: "Internal server error" },
+      { message: "Internal server error", error: (error as Error).message },
       { status: 500 }
     );
   }
