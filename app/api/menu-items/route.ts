@@ -1,27 +1,72 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function GET() {
-  const items = await prisma.menuItem.findMany({ include: { category: true } });
-  return NextResponse.json(items);
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
+
+  try {
+    const item = await prisma.menuItem.findUnique({
+      where: { id },
+      include: { category: true },
+    });
+
+    if (!item) {
+      return NextResponse.json({ error: "Item not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(item);
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to fetch item" },
+      { status: 500 }
+    );
+  }
 }
 
-export async function POST(req: Request) {
-  const { name, price, image, type, category } = await req.json();
+export async function PUT(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
 
-  if (!name || !price || !image || !type || !category) {
-    return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+  try {
+    const body = await request.json();
+    const { name, price, image, type, category } = body;
+
+    const item = await prisma.menuItem.update({
+      where: { id },
+      data: { name, price, image, type },
+      include: { category: true },
+    });
+
+    return NextResponse.json(item);
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to update item" },
+      { status: 500 }
+    );
   }
+}
 
-  const cat = await prisma.category.upsert({
-    where: { name: category },
-    update: {},
-    create: { name: category },
-  });
+export async function DELETE(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
 
-  const item = await prisma.menuItem.create({
-    data: { name, price, image, type, categoryId: cat.id },
-  });
+  try {
+    await prisma.menuItem.delete({
+      where: { id },
+    });
 
-  return NextResponse.json(item, { status: 201 });
+    return NextResponse.json({ message: "Item deleted" });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to delete item" },
+      { status: 500 }
+    );
+  }
 }
