@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import ProductGrid from "./ProductGrid";
-import config from "@/app/data/New_data.json";
 import { FilterState, Product } from "@/types/types";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +11,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"; // shadcn/ui
 import SideFilter from "../filter/Itemsfilter";
+import { getCategories, getProducts } from "@/lib/getProducts";
+
+// ✅ import from our utility file instead of JSON directly
 
 const ItemGrid: React.FC = () => {
   const [filters, setFilters] = useState<FilterState>({
@@ -20,12 +22,15 @@ const ItemGrid: React.FC = () => {
     priceRange: 2000,
   });
 
+  const products = getProducts();
+  const categories = getCategories();
+
   const handleFilterChange = (newFilters: FilterState) => {
     setFilters(newFilters);
   };
 
-  // Filtering logic applied to mockResults
-  const filteredProducts: Product[] = config.mockResults.filter((item) => {
+  // Filtering logic applied to products with IDs
+  const filteredProducts: Product[] = products.filter((item) => {
     const matchesSearch = item.name
       .toLowerCase()
       .includes(filters.searchTerm.toLowerCase());
@@ -34,8 +39,7 @@ const ItemGrid: React.FC = () => {
       filters.selectedCategories.length === 0 ||
       filters.selectedCategories.includes(item.type);
 
-    // For now no price field in JSON → always true
-    const matchesPrice = true;
+    const matchesPrice = item.price <= filters.priceRange;
 
     return matchesSearch && matchesCategory && matchesPrice;
   });
@@ -56,7 +60,7 @@ const ItemGrid: React.FC = () => {
             </SheetHeader>
             <div className="mt-4">
               <SideFilter
-                categories={config.categories}
+                categories={categories}
                 onFilterChange={handleFilterChange}
               />
             </div>
@@ -67,7 +71,7 @@ const ItemGrid: React.FC = () => {
       {/* Sidebar (desktop only) */}
       <div className="hidden md:block w-72 flex-shrink-0 sticky top-6 h-fit">
         <SideFilter
-          categories={config.categories}
+          categories={categories}
           onFilterChange={handleFilterChange}
         />
       </div>

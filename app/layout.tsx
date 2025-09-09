@@ -4,6 +4,7 @@ import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers/Providers";
 import Navbar from "./components/common/Navbar/Navbar";
+import { CartProvider } from "./components/cart/CartItems";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "500", "600", "800"],
@@ -29,8 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`montserrat popins antialiased`}>
         <Providers>
- <Navbar/>       
-          {children}</Providers>
+          <Navbar />
+          <CartProvider>{children}</CartProvider>
+        </Providers>
       </body>
     </html>
   );
